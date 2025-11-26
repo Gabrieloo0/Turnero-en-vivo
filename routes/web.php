@@ -12,13 +12,15 @@ use App\Http\Controllers\TurnoController;
 | por el RouteServiceProvider dentro de un grupo que contiene el middleware "web".
 |
 */
-
+Route::get('/', function () {
+    return redirect()->route('solicitud.index');
+});
 // Ruta raíz: formulario de solicitud de turnos (emisor)
-Route::get('/', [TurnoController::class, 'index'])
+Route::get('/solicitud', [TurnoController::class, 'index'])
     ->name('solicitud.index');
 
 // Ruta para guardar nueva solicitud (POST desde el formulario)
-Route::post('/solicitud', [TurnoController::class, 'store'])
+Route::post('/solicitud_store', [TurnoController::class, 'store'])
     ->name('solicitud.store');
 
 // Ruta para la pantalla de clientes (display en tiempo real)
