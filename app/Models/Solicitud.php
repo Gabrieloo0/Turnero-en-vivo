@@ -6,5 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Solicitud extends Model
 {
-    protected $fillable = ['user', 'content'];
+    // Campos que se pueden asignar masivamente
+    protected $fillable = [
+        'user',
+        'dni',
+        'content',
+        'tipo',
+        'numero',
+        'estado',
+        'puesto',
+    ];
 }

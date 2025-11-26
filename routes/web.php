@@ -1,8 +1,26 @@
 <?php
 
-use App\Http\Controllers\TurnoController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TurnoController;
 
-Route::get('/',[TurnoController::class, 'index']) ->name('turno.index');
-Route::post('/solicitud',[TurnoController::class, 'store']) ->name('turno.store');
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Aquí definís las rutas web de tu aplicación. Estas rutas son cargadas
+| por el RouteServiceProvider dentro de un grupo que contiene el middleware "web".
+|
+*/
 
+// Ruta raíz: formulario de solicitud de turnos (emisor)
+Route::get('/', [TurnoController::class, 'index'])
+    ->name('solicitud.index');
+
+// Ruta para guardar nueva solicitud (POST desde el formulario)
+Route::post('/solicitud', [TurnoController::class, 'store'])
+    ->name('solicitud.store');
+
+// Ruta para la pantalla de clientes (display en tiempo real)
+Route::get('/pantalla', [TurnoController::class, 'pantalla'])
+    ->name('solicitud.pantalla');
