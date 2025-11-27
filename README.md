@@ -52,7 +52,7 @@ php artisan migrate
 ```
 
 ### 5. Puesta en Marcha del proyecto
-Para que el sistema funcione en tiempo real se neesita correr el siguiente comando:
+Para que el sistema funcione en tiempo real se necesita correr el siguiente comando:
 - Unica terminal para levantar todo el proyecto
 ```bash
 composer run dev
